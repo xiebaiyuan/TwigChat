@@ -18,6 +18,7 @@ import com.twigchat.xiebaiyuan.twigchat.R.mipmap.ic_launcher
 
 class MainActivity : AppCompatActivity(), XmppCallback, View.OnClickListener {
     override fun onClick(v: View?) {
+        progressDialogShow()
         when (v) {
             connect -> mXMPPService.connect()
             register -> mXMPPService.register("test001", "123456")

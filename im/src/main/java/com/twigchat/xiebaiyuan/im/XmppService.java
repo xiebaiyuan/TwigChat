@@ -36,10 +36,10 @@ import javax.net.ssl.X509TrustManager;
 public class XmppService {
 
 
-    final String HOST = "yax.im";
+    final String HOST = "xxx.xxx.xxx.xxx";
     final int PORT = 5222;
-    private final String TAG = "wxl";
-    private final String SERVICE_NAME = "yax.im";
+    private final String TAG = "xmpptag";
+    private final String SERVICE_NAME = "xxx.xxx.xxx.xxx";
     AbstractXMPPConnection mXMPPTCPConnection;
     XmppCallback callback;
     Chat mChat;
@@ -123,7 +123,7 @@ public class XmppService {
                     e.printStackTrace();
                     mXMPPTCPConnection.disconnect();
                 }
-                Log.i("wxl", "XMPPService login connected=" + mXMPPTCPConnection.isConnected());
+                Log.i("xmppTag", "XMPPService login connected=" + mXMPPTCPConnection.isConnected());
                 if (mXMPPTCPConnection.isConnected()) {
                     try {
                         mXMPPTCPConnection.login(userName, password);
@@ -164,12 +164,12 @@ public class XmppService {
                     e.printStackTrace();
                     mXMPPTCPConnection.disconnect();
                 }
-                Log.i("wxl", "XMPPService connected=" + mXMPPTCPConnection.isConnected());
+                Log.i("xmppTag", "XMPPService connected=" + mXMPPTCPConnection.isConnected());
                 if (mXMPPTCPConnection.isConnected()) {
                     String serviceName = mXMPPTCPConnection.getServiceName();
                     try {
                         AccountManager accountManager = AccountManager.getInstance(mXMPPTCPConnection);
-                        Log.i("wxl", "Register supportsAccountCreation=" + accountManager.supportsAccountCreation());
+                        Log.i("xmppTag", "Register supportsAccountCreation=" + accountManager.supportsAccountCreation());
                         if (accountManager.supportsAccountCreation()) {
                             accountManager.createAccount(userName + "@" + serviceName, password);
                             Log.i(TAG, "注册成功~");
@@ -206,7 +206,7 @@ public class XmppService {
                     e.printStackTrace();
                     mXMPPTCPConnection.disconnect();
                 }
-                Log.i("wxl", "XMPPService connected=" + mXMPPTCPConnection.isConnected());
+                Log.i("xmppTag", "XMPPService connected=" + mXMPPTCPConnection.isConnected());
                 if (mXMPPTCPConnection.isConnected()) {
                     try {
 
@@ -247,7 +247,7 @@ public class XmppService {
                     e.printStackTrace();
                     mXMPPTCPConnection.disconnect();
                 }
-                Log.i("wxl", "XMPPService connected=" + mXMPPTCPConnection.isConnected());
+                Log.i("xmppTag", "XMPPService connected=" + mXMPPTCPConnection.isConnected());
                 if (mXMPPTCPConnection.isConnected()) {
                     try {
                         if (mXMPPTCPConnection.isAuthenticated()) {
